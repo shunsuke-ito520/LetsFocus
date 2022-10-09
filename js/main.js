@@ -1,23 +1,85 @@
-  // function setup() {
-  //   canvas = createCanvas(windowWidth,windowHeight,WEBGL);//2Dの場合は引数にWEBGLは要らない
-  //   canvas.position(0,0);//canvasをページの原点に固定
-  //   canvas.style('z-index','-1');//canvasを後ろに移動する
-  //   background(255);
-  //   noStroke();
-  //   fill(255);
-  //   colorMode(HSB, 360, 100, 100, 255);
-  // };
+'use strict';
 
-  // function draw() {
+{
+  const title = document.getElementById('title');
+  const timer = document.getElementById('timer');
+  const bgm = document.getElementById('bgm');
+  const play = document.getElementById('play');
+  const clickHere = document.getElementById('clickHere');
+  const next1 = document.getElementById('next1');
+  const next2 = document.getElementById('next2');
+  const prev1 = document.getElementById('prev1');
+  const prev2 = document.getElementById('prev2');
+  const prev3 = document.getElementById('prev3');
+  // const nextBtns = document.querySelectorAll('.bi-arrow-down-circle-fill');
+  const windowHeight = document.documentElement.clientHeight;
+  const toggleBtn = document.getElementById('toggleBtn');
+  const youtube = document.querySelector('iframe');
+
+  title.style.height = `${windowHeight - 64}px`;
+  timer.style.height = `${windowHeight}px`;
+  bgm.style.height = `${windowHeight}px`;
+  play.style.height = `${windowHeight - 64}px`;
+
+  clickHere.addEventListener('click', () => {
+    window.scrollTo({
+      top: windowHeight,
+      behavior: 'smooth'
+    });
+  });
+
+  next1.addEventListener('click', () => {
+    window.scrollTo({
+      top: windowHeight * 2,
+      behavior: 'smooth'
+    });
+  });
+
+  next2.addEventListener('click', () => {
+    window.scrollTo({
+      top: windowHeight * 3,
+      behavior: 'smooth'
+    });
+  });
   
-  //   const step = 20;
-  
-  //   for (let y = 0; y <= height; y += step) {
-  //     for (let x = 0; x <= width; x += step) {
-  //       const d = dist(x, y, mouseX, mouseY);
-  //       const size = map(sin(d * 0.05), -1, 1, 0, 10);
-  //       fill(map(sin(d * 0.05), -1, 1, 60, 320), 100, 100);
-  //       ellipse(x, y, size, size);
-  //     }
-  //   }
-  // }
+  // nextBtns.forEach((next) => {
+  //   next.addEventListener('click', () => {
+  //     window.scrollTo({
+  //           top: windowHeight,
+  //           behavior: 'smooth'
+  //         });
+  //   });
+  //   i++;
+  // });
+
+  prev1.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  prev2.addEventListener('click', () => {
+    window.scrollTo({
+      top: windowHeight * 1,
+      behavior: 'smooth'
+    });
+  });
+
+  prev3.addEventListener('click', () => {
+    window.scrollTo({
+      top: windowHeight * 2,
+      behavior: 'smooth'
+    });
+  });
+
+  toggleBtn.addEventListener('change', () => {
+    if(youtube.classList.contains('appear')){
+      youtube.classList.remove('appear');
+      youtube.classList.add('hidden');
+    } else {
+      youtube.classList.add('appear');
+      youtube.classList.remove('hidden');
+    }
+  });
+}

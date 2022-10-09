@@ -11,11 +11,13 @@
 <body>
   <div class="container">
     <header></header>
-      <div class="main-container">
-        <h1>Let's Focus!</h1>
+      <div class="main-container " id="title">
+        <h1 class="popup">Let's Focus!</h1>
         <p>説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。説明。</p>
+        <i class="bi bi-arrow-down-circle-fill" id="clickHere"></i>
+        <p class="navi">click here!</p>
       </div>
-      <div class="color-select">
+      <div class="color-select popup">
         <span>color</span>
         <div class="circle-black"></div>
         <div class="circle-white"></div>
@@ -23,10 +25,35 @@
         <div class="circle-blue"></div>
         <div class="circle-green"></div>
       </div>
-      <div class="space"></div>
+      <div class="main-container" id="timer">
+        <p class="navi">prev</p>
+        <i class="bi bi-arrow-up-circle-fill" id="prev1"></i>
+        <div>
+
+        </div>
+        <i class="bi bi-arrow-down-circle-fill" id="next1"></i>
+        <p class="navi">next</p>
+      </div>
+      <div class="main-container" id="bgm">
+        <p class="navi">prev</p>
+        <i class="bi bi-arrow-up-circle-fill" id="prev2"></i>
+        <div>
+          <div>BGM(lofi hiphop)を流しますか？</div>
+          <div class="toggle-frame" id="toggleBtn">
+            <input type="checkbox">
+          </div>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/jfKfPfyJRdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <i class="bi bi-arrow-down-circle-fill" id="next2"></i>
+        <p class="navi">next</p>
+      </div>
+      <div class="main-container" id="play">
+        <i class="bi bi-arrow-up-circle-fill" id="prev3"></i>
+      </div>
+    <footer></footer>
   </div>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js"> </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
 </body>
 </html>
