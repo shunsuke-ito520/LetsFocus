@@ -1,0 +1,120 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  /* background-color: aqua;
+  -webkit-backdrop-filter: blur(20px);  ぼかしエフェクト 
+  backdrop-filter: 20px; */
+}
+
+header {
+  width: 100%;
+  height: 64px;
+}
+
+.container {
+  box-sizing: border-box;
+  width: calc(100% - (16px * 2));
+  height: 100%;
+  margin: auto;
+  border: 1px solid red;
+  justify-content: space-between;
+}
+
+.main-container {
+  width: 80%;
+  height: 600px;
+  padding: 16px;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid red;
+}
+
+.main-container h1 {
+  text-align: center;
+  font-size: 72px;
+}
+
+.color-select {
+  position: fixed;
+  top: 300px;
+  right: 32px;
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 16px;
+}
+
+.color-select > span {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.circle-black {
+  margin-bottom: 8px;
+  width: 36px;
+  height: 36px;
+  background : black;
+  border-radius: 50%;
+  opacity: .6;
+  cursor: pointer;
+}
+
+.circle-white {
+  margin-bottom: 8px;
+  width: 36px;
+  height: 36px;
+  background : white;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, .6);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.circle-red {
+  margin-bottom: 8px;
+  width: 36px;
+  height: 36px;
+  background : red;
+  border-radius: 50%;
+  opacity: .6;
+  cursor: pointer;
+}
+
+.circle-blue {
+  margin-bottom: 8px;
+  width: 36px;
+  height: 36px;
+  background : green;
+  border-radius: 50%;
+  opacity: .6;
+  cursor: pointer;
+}
+
+.circle-green {
+  width: 36px;
+  height: 36px;
+  background : blue;
+  border-radius: 50%;
+  opacity: .6;
+  cursor: pointer;
+}
+
+[class^= "circle"]:hover {
+  width: 40px;
+  height: 40px;
+  opacity: .3;
+}
+
+.space {
+  height: 233px;
+  background: black;
+}
