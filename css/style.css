@@ -73,6 +73,40 @@ header, footer {
   flex-direction: column;
 }
 
+.set-time {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  width: 36px;
+  font-size: 24px;
+}
+
+.set-time span,
+.set-time i {
+  margin: 0 auto;
+}
+
+.set-time i:hover {
+  cursor: pointer;
+  opacity: .5;
+}
+
+.set-time i:active {
+  opacity: 0;
+}
+
+.set-worktime {
+  display: flex;
+}
+
+.period {
+  width: 16px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .bi-arrow-up-circle-fill {
   font-size: 36px;
   margin: 0 auto;
