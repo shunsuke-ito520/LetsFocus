@@ -1,11 +1,22 @@
 html {
-  background-color: aqua;
+  /* background-color: aqua; */
   height: 100%;
 }
 
 body {
+  /* ブラックイメージ */
+  /* background-image: url("../img/img-black.png"); */
+
+
+  /* background-image: url("../img/img-green.png"); */
+
+  background-image: url("../img/img-blue.jpg");
+
+
+  background-size: cover;
   height: 100%;
   margin: 0;
+  /* background-color: aqua; */
 }
 
 header, footer {
@@ -291,4 +302,9 @@ iframe {
     transform: translateY(40px);
     opacity: 0;
   }
+}
+
+.playtime {
+  display: flex;
+  justify-content: center;
 }
