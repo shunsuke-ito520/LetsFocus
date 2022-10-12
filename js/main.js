@@ -82,4 +82,18 @@
       youtube.classList.remove('hidden');
     }
   });
+
+  const playbtn = document.querySelector('.bi-play-circle');
+  const pausebtn = document.querySelector('.bi-pause-circle');
+
+  playbtn.addEventListener('click', () => {
+    playbtn.classList.add('pause');
+    pausebtn.classList.remove('pause');
+  });
+
+  pausebtn.addEventListener('click', () => {
+    playbtn.classList.remove('pause');
+    pausebtn.classList.add('pause');
+  });
+
 }

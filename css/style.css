@@ -308,3 +308,24 @@ iframe {
   display: flex;
   justify-content: center;
 }
+
+.bi-play-circle,
+.bi-pause-circle {
+  font-size: 54px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.bi-play-circle:hover,
+.bi-pause-circle:hover {
+  opacity: .5;
+}
+
+.bi-play-circle:active,
+.bi-pause-circle:active {
+  opacity: 0;
+}
+
+.pause {
+  display: none;
+}
