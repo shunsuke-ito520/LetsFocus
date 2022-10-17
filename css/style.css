@@ -309,6 +309,10 @@ iframe {
   justify-content: center;
 }
 
+.interval {
+  color: red;
+}
+
 .bi-play-circle,
 .bi-pause-circle {
   font-size: 54px;

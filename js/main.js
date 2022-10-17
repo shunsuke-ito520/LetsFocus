@@ -73,6 +73,89 @@
     });
   });
 
+  // 時間設定のイベント
+  const countUps = document.querySelectorAll('.bi-caret-up-fill');
+
+  const countDowns = document.querySelectorAll('.bi-caret-down-fill');
+
+   const countTo2 = (i) => {
+    countUps[i].addEventListener('click', () => {
+      if(countUps[i].nextElementSibling.textContent === '2') {
+        return;
+      } else if (countUps[i].nextElementSibling.textContent === '1' && countUps[i + 1].nextElementSibling.textContent >= 4) {
+        return;
+      } 
+
+      countUps[i].nextElementSibling.textContent++;
+    });
+   };
+
+   const countTo3 = (i) => {
+    countUps[i].addEventListener('click', () => {
+      if(countUps[i].nextElementSibling.textContent === '3' && countUps[i - 1].nextElementSibling.textContent === '2') {
+        return;
+      } else if(countUps[i].nextElementSibling.textContent === '9') {
+        return;
+      }
+
+      countUps[i].nextElementSibling.textContent++;
+    });
+   };
+
+   const countTo5 = (i) => {
+    countUps[i].addEventListener('click', () => {
+      if(countUps[i].nextElementSibling.textContent === '5') {
+        return;
+      }
+
+      countUps[i].nextElementSibling.textContent++;
+    });
+   };
+
+   const countTo9 = (i) => {
+    countUps[i].addEventListener('click', () => {
+      if(countUps[i].nextElementSibling.textContent === '9') {
+        return;
+      }
+
+      countUps[i].nextElementSibling.textContent++;
+    });
+   };
+
+   countTo2(0);
+   countTo3(1);
+   countTo5(2);
+   countTo9(3);
+   countTo2(4);
+   countTo3(5);
+   countTo5(6);
+   countTo9(7);
+   countTo9(8);
+   countTo9(9);
+   countTo2(10);
+   countTo3(11);
+   countTo5(12);
+   countTo9(13);
+
+  //  作業時間設定時に自動的にプレイ画面の残り時間も合わせる
+  const playTime = document.querySelector('.playtime h1');
+  
+  countDowns.forEach((countDown) => {
+    countDown.addEventListener('click', () => {
+      if(countDown.previousElementSibling.textContent === '0') {
+        return;
+      } 
+      countDown.previousElementSibling.textContent--;
+      playTime.textContent = `${countUps[0].nextElementSibling.textContent}${countUps[1].nextElementSibling.textContent}:${countUps[2].nextElementSibling.textContent}${countUps[3].nextElementSibling.textContent}:00`;
+    });
+  });
+  
+  countUps.forEach((countUp) => {
+    countUp.addEventListener('click', () => {
+      playTime.textContent = `${countUps[0].nextElementSibling.textContent}${countUps[1].nextElementSibling.textContent}:${countUps[2].nextElementSibling.textContent}${countUps[3].nextElementSibling.textContent}:00`;
+    });
+  });
+
   toggleBtn.addEventListener('change', () => {
     if(youtube.classList.contains('appear')){
       youtube.classList.remove('appear');
