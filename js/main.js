@@ -139,6 +139,10 @@
 
   //  作業時間設定時に自動的にプレイ画面の残り時間も合わせる
   const playTime = document.querySelector('.playtime h1');
+
+  let setPlaytime = ((parseInt(countUps[0].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[1].nextElementSibling.textContent, 10)) * 60 + (parseInt(countUps[2].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[3].nextElementSibling.textContent, 10))) * 60;
+
+  console.log(setPlaytime);
   
   countDowns.forEach((countDown) => {
     countDown.addEventListener('click', () => {
@@ -147,12 +151,18 @@
       } 
       countDown.previousElementSibling.textContent--;
       playTime.textContent = `${countUps[0].nextElementSibling.textContent}${countUps[1].nextElementSibling.textContent}:${countUps[2].nextElementSibling.textContent}${countUps[3].nextElementSibling.textContent}:00`;
+
+      setPlaytime = ((parseInt(countUps[0].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[1].nextElementSibling.textContent, 10)) * 60 + (parseInt(countUps[2].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[3].nextElementSibling.textContent, 10))) * 60;
+      console.log(setPlaytime);   
     });
   });
   
   countUps.forEach((countUp) => {
     countUp.addEventListener('click', () => {
       playTime.textContent = `${countUps[0].nextElementSibling.textContent}${countUps[1].nextElementSibling.textContent}:${countUps[2].nextElementSibling.textContent}${countUps[3].nextElementSibling.textContent}:00`;
+
+      setPlaytime = ((parseInt(countUps[0].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[1].nextElementSibling.textContent, 10)) * 60 + (parseInt(countUps[2].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[3].nextElementSibling.textContent, 10))) * 60;
+      console.log(setPlaytime); 
     });
   });
 
@@ -169,9 +179,25 @@
   const playbtn = document.querySelector('.bi-play-circle');
   const pausebtn = document.querySelector('.bi-pause-circle');
 
+  const focus = () => {
+    if(playTime.textContent === '00:00:00') {
+      return;
+    }
+
+    setPlaytime--;
+    let hour = `${((setPlaytime - setPlaytime % 60) / 60 - ((setPlaytime - setPlaytime % 60) / 60 % 60)) / 60}`.padStart(2, '0');
+
+    let min = `${(setPlaytime - setPlaytime % 60) / 60 % 60}`.padStart(2, '0');
+
+    let second = `${setPlaytime % 60}`.padStart(2, '0');
+
+    playTime.textContent = `${hour}:${min}:${second}`;
+  };
+
   playbtn.addEventListener('click', () => {
     playbtn.classList.add('pause');
     pausebtn.classList.remove('pause');
+    setInterval(focus, 1000);
   });
 
   pausebtn.addEventListener('click', () => {
