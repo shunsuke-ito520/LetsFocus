@@ -73,6 +73,47 @@
     });
   });
 
+  // カラーモードの選択
+  const body = document.querySelector('body');
+  const black = document.querySelector('.circle-black');
+  const white = document.querySelector('.circle-white');
+  const red = document.querySelector('.circle-red');
+  const green = document.querySelector('.circle-blue');
+  const blue = document.querySelector('.circle-green');
+
+  const colorReset = () => {
+    body.classList.remove('black-color-mode');
+    body.classList.remove('white-color-mode');
+    body.classList.remove('red-color-mode');
+    body.classList.remove('green-color-mode');
+    body.classList.remove('blue-color-mode');
+  };
+
+  black.addEventListener('click', () => {
+    colorReset();
+    body.classList.add('black-color-mode');
+  });
+
+  white.addEventListener('click', () => {
+    colorReset();
+    body.classList.add('white-color-mode');
+  });
+
+  red.addEventListener('click', () => {
+    colorReset();
+    body.classList.add('red-color-mode');
+  });
+
+  green.addEventListener('click', () => {
+    colorReset();
+    body.classList.add('green-color-mode');
+  });
+
+  blue.addEventListener('click', () => {
+    colorReset();
+    body.classList.add('blue-color-mode');
+  });
+
   // 時間設定のイベント
   const countUps = document.querySelectorAll('.bi-caret-up-fill');
 
@@ -142,7 +183,11 @@
 
   let setPlaytime = ((parseInt(countUps[0].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[1].nextElementSibling.textContent, 10)) * 60 + (parseInt(countUps[2].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[3].nextElementSibling.textContent, 10))) * 60;
 
-  console.log(setPlaytime);
+  let setIntervalTime = ((parseInt(countUps[4].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[5].nextElementSibling.textContent, 10)) * 60 + (parseInt(countUps[6].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[7].nextElementSibling.textContent, 10))) * 60;
+
+  let numberOfTimes = (parseInt(countUps[8].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[9].nextElementSibling.textContent, 10));
+
+  let setRelaxTime = ((parseInt(countUps[10].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[11].nextElementSibling.textContent, 10)) * 60 + (parseInt(countUps[12].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[13].nextElementSibling.textContent, 10))) * 60;
   
   countDowns.forEach((countDown) => {
     countDown.addEventListener('click', () => {
@@ -153,7 +198,20 @@
       playTime.textContent = `${countUps[0].nextElementSibling.textContent}${countUps[1].nextElementSibling.textContent}:${countUps[2].nextElementSibling.textContent}${countUps[3].nextElementSibling.textContent}:00`;
 
       setPlaytime = ((parseInt(countUps[0].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[1].nextElementSibling.textContent, 10)) * 60 + (parseInt(countUps[2].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[3].nextElementSibling.textContent, 10))) * 60;
+
+      setIntervalTime = ((parseInt(countUps[4].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[5].nextElementSibling.textContent, 10)) * 60 + (parseInt(countUps[6].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[7].nextElementSibling.textContent, 10))) * 60;
+
+      numberOfTimes = (parseInt(countUps[8].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[9].nextElementSibling.textContent, 10));
+
+      setRelaxTime = ((parseInt(countUps[10].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[11].nextElementSibling.textContent, 10)) * 60 + (parseInt(countUps[12].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[13].nextElementSibling.textContent, 10))) * 60;
+
+      setIntervalTime--;
+      setRelaxTime--;
+
       console.log(setPlaytime);   
+      console.log(setIntervalTime);   
+      console.log(numberOfTimes);   
+      console.log(setRelaxTime);   
     });
   });
   
@@ -162,7 +220,20 @@
       playTime.textContent = `${countUps[0].nextElementSibling.textContent}${countUps[1].nextElementSibling.textContent}:${countUps[2].nextElementSibling.textContent}${countUps[3].nextElementSibling.textContent}:00`;
 
       setPlaytime = ((parseInt(countUps[0].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[1].nextElementSibling.textContent, 10)) * 60 + (parseInt(countUps[2].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[3].nextElementSibling.textContent, 10))) * 60;
-      console.log(setPlaytime); 
+
+      setIntervalTime = ((parseInt(countUps[4].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[5].nextElementSibling.textContent, 10)) * 60 + (parseInt(countUps[6].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[7].nextElementSibling.textContent, 10))) * 60;
+
+      numberOfTimes = (parseInt(countUps[8].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[9].nextElementSibling.textContent, 10));
+
+      setRelaxTime = ((parseInt(countUps[10].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[11].nextElementSibling.textContent, 10)) * 60 + (parseInt(countUps[12].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[13].nextElementSibling.textContent, 10))) * 60;
+
+      setIntervalTime--;
+      setRelaxTime--;
+
+      console.log(setPlaytime);   
+      console.log(setIntervalTime);   
+      console.log(numberOfTimes); 
+      console.log(setRelaxTime); 
     });
   });
 
@@ -179,11 +250,9 @@
   const playbtn = document.querySelector('.bi-play-circle');
   const pausebtn = document.querySelector('.bi-pause-circle');
 
-  const focus = () => {
-    if(playTime.textContent === '00:00:00') {
-      return;
-    }
+  let i = 1;
 
+  const playNow = () => {
     setPlaytime--;
     let hour = `${((setPlaytime - setPlaytime % 60) / 60 - ((setPlaytime - setPlaytime % 60) / 60 % 60)) / 60}`.padStart(2, '0');
 
@@ -194,15 +263,139 @@
     playTime.textContent = `${hour}:${min}:${second}`;
   };
 
+  const intervalNow = () => {
+    setIntervalTime--;
+    let hour = `${((setIntervalTime - setIntervalTime % 60) / 60 - ((setIntervalTime - setIntervalTime % 60) / 60 % 60)) / 60}`.padStart(2, '0');
+
+    let min = `${(setIntervalTime - setIntervalTime % 60) / 60 % 60}`.padStart(2, '0');
+
+    let second = `${setIntervalTime % 60}`.padStart(2, '0');
+
+    playTime.textContent = `${hour}:${min}:${second}`;
+  };
+
+  const relaxNow = () => {
+    setRelaxTime--;
+    let hour = `${((setRelaxTime - setRelaxTime % 60) / 60 - ((setRelaxTime - setRelaxTime % 60) / 60 % 60)) / 60}`.padStart(2, '0');
+
+    let min = `${(setRelaxTime - setRelaxTime % 60) / 60 % 60}`.padStart(2, '0');
+
+    let second = `${setRelaxTime % 60}`.padStart(2, '0');
+
+    playTime.textContent = `${hour}:${min}:${second}`;
+  };
+
+  const focus = () => {
+    if(playTime.classList.contains('relax')) {
+      if(playTime.textContent === '00:00:00'){
+        playTime.classList.remove('relax');
+        i = 0;
+        let hour = `${((setPlaytime - setPlaytime % 60) / 60 - ((setPlaytime - setPlaytime % 60) / 60 % 60)) / 60}`.padStart(2, '0');
+
+        let min = `${(setPlaytime - setPlaytime % 60) / 60 % 60}`.padStart(2, '0');
+
+        let second = `${setPlaytime % 60}`.padStart(2, '0');
+
+        playTime.textContent = `${hour}:${min}:${second}`;
+
+        setRelaxTime = ((parseInt(countUps[10].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[11].nextElementSibling.textContent, 10)) * 60 + (parseInt(countUps[12].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[13].nextElementSibling.textContent, 10))) * 60;
+        setRelaxTime--;
+      } else {
+        relaxNow();
+      }
+    } else if(playTime.classList.contains('interval')) {
+      if(playTime.textContent === '00:00:00') {
+        playTime.classList.remove('interval');
+        // playTime.classList.add('relax');
+
+        let hour = `${((setPlaytime - setPlaytime % 60) / 60 - ((setPlaytime - setPlaytime % 60) / 60 % 60)) / 60}`.padStart(2, '0');
+
+        let min = `${(setPlaytime - setPlaytime % 60) / 60 % 60}`.padStart(2, '0');
+
+        let second = `${setPlaytime % 60}`.padStart(2, '0');
+
+        playTime.textContent = `${hour}:${min}:${second}`;
+
+        setIntervalTime = ((parseInt(countUps[4].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[5].nextElementSibling.textContent, 10)) * 60 + (parseInt(countUps[6].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[7].nextElementSibling.textContent, 10))) * 60;
+        setIntervalTime--;
+      } else {
+        intervalNow();
+      } 
+    } else {
+      if(playTime.textContent === '00:00:00' && i < numberOfTimes) {
+        playTime.classList.add('interval');
+
+        let hour = `${((setIntervalTime - setIntervalTime % 60) / 60 - ((setIntervalTime - setIntervalTime % 60) / 60 % 60)) / 60}`.padStart(2, '0');
+
+        let min = `${(setIntervalTime - setIntervalTime % 60) / 60 % 60}`.padStart(2, '0');
+
+        let second = `${setIntervalTime % 60}`.padStart(2, '0');
+
+        playTime.textContent = `${hour}:${min}:${second}`;
+
+        i++;
+
+        setPlaytime = ((parseInt(countUps[0].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[1].nextElementSibling.textContent, 10)) * 60 + (parseInt(countUps[2].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[3].nextElementSibling.textContent, 10))) * 60;
+        setPlaytime--;
+      } else if(playTime.textContent === '00:00:00' && i === numberOfTimes) {
+        playTime.classList.add('relax');
+        let hour = `${((setRelaxTime - setRelaxTime % 60) / 60 - ((setRelaxTime - setRelaxTime % 60) / 60 % 60)) / 60}`.padStart(2, '0');
+
+        let min = `${(setRelaxTime - setRelaxTime % 60) / 60 % 60}`.padStart(2, '0');
+
+        let second = `${setRelaxTime % 60}`.padStart(2, '0');
+
+        playTime.textContent = `${hour}:${min}:${second}`;
+
+        setPlaytime = ((parseInt(countUps[0].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[1].nextElementSibling.textContent, 10)) * 60 + (parseInt(countUps[2].nextElementSibling.textContent, 10) * 10 + parseInt(countUps[3].nextElementSibling.textContent, 10))) * 60;
+        setPlaytime--;
+      } else {
+        playNow();
+      }
+    }
+
+    // if(playTime.textContent === '00:00:00') {
+    //   playTime.classList.add('interval');
+    // }
+
+    // playNow();
+
+    // setPlaytime--;
+    // let hour = `${((setPlaytime - setPlaytime % 60) / 60 - ((setPlaytime - setPlaytime % 60) / 60 % 60)) / 60}`.padStart(2, '0');
+
+    // let min = `${(setPlaytime - setPlaytime % 60) / 60 % 60}`.padStart(2, '0');
+
+    // let second = `${setPlaytime % 60}`.padStart(2, '0');
+
+    // playTime.textContent = `${hour}:${min}:${second}`;
+  };
+
+  let intervalId;
+
+  const timerStart = () => {
+    if(!intervalId) {
+      intervalId = setInterval(focus, 1000);
+    }
+  };
+
   playbtn.addEventListener('click', () => {
     playbtn.classList.add('pause');
     pausebtn.classList.remove('pause');
-    setInterval(focus, 1000);
+    // let intervalId = setInterval(focus, 1000);
+    timerStart();
   });
+
+  // const intervalId = setInterval(focus, 1000);
+
+  const timerStop = () => {
+    clearInterval(intervalId);
+    intervalId = null;
+  };
 
   pausebtn.addEventListener('click', () => {
     playbtn.classList.remove('pause');
     pausebtn.classList.add('pause');
+    timerStop();
   });
 
 }

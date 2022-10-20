@@ -10,13 +10,32 @@ body {
 
   /* background-image: url("../img/img-green.png"); */
 
-  background-image: url("../img/img-blue.jpg");
-
+  /* background-image: url("../img/img-blue.jpg"); */
 
   background-size: cover;
   height: 100%;
   margin: 0;
   /* background-color: aqua; */
+}
+
+.black-color-mode {
+  background-color: rgb(190, 188, 188);
+}
+
+.white-color-mode {
+  background-color: whitesmoke;
+}
+
+.red-color-mode {
+  background-color: rgb(247, 133, 133);
+}
+
+.green-color-mode {
+  background-image: url("../img/img-green.png");
+}
+
+.blue-color-mode {
+  background-image: url("../img/img-blue.jpg");
 }
 
 header, footer {
@@ -311,6 +330,10 @@ iframe {
 
 .interval {
   color: red;
+}
+
+.relax {
+  color: green;
 }
 
 .bi-play-circle,
