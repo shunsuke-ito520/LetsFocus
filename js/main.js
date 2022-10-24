@@ -237,6 +237,26 @@
     });
   });
 
+  const alertBtn = document.getElementById('alertBtn');
+
+  // const audio = document.createElement('audio');
+  // audio.src = 'Clock-Alarm02-1(Loop).mp3';
+  // alertBtn.classList.add('audio');
+  // console.log(audio);
+
+  alertBtn.addEventListener('change', () => {
+    if (alertBtn.classList.contains('audio')) {
+      document.querySelector('audio').remove();
+      alertBtn.classList.remove('audio');
+    } else {
+      const audio = document.createElement('audio');
+      audio.src = 'alarm.mp3';
+      alertBtn.appendChild(audio);
+      alertBtn.classList.add('audio');
+      // audio.play();
+    }
+  })
+
   toggleBtn.addEventListener('change', () => {
     if(youtube.classList.contains('appear')){
       youtube.classList.remove('appear');
@@ -286,6 +306,10 @@
   };
 
   const focus = () => {
+    if(playTime.textContent === '00:00:01' && alertBtn.classList.contains('audio')) {
+      audio.play();
+    }
+
     if(playTime.classList.contains('relax')) {
       if(playTime.textContent === '00:00:00'){
         playTime.classList.remove('relax');

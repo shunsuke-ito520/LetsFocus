@@ -147,6 +147,10 @@ header, footer {
   display: flex;
 }
 
+/* audio {
+
+} */
+
 .period {
   width: 16px;
   font-size: 24px;
