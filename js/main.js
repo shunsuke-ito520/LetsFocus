@@ -255,6 +255,7 @@
       alertBtn.classList.add('audio');
       // audio.play();
     }
+
   })
 
   toggleBtn.addEventListener('change', () => {
@@ -307,7 +308,7 @@
 
   const focus = () => {
     if(playTime.textContent === '00:00:01' && alertBtn.classList.contains('audio')) {
-      audio.play();
+      document.querySelector('audio').play();
     }
 
     if(playTime.classList.contains('relax')) {
