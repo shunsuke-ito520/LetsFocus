@@ -237,14 +237,26 @@
     });
   });
 
+  // アラームのオンオフ
   const alertBtn = document.getElementById('alertBtn');
+  const input = document.querySelectorAll('input');
+
+  alertBtn.addEventListener('click', () => {
+    if(alertBtn.classList.contains('true')) {
+      alertBtn.classList.remove('true');
+      input[0].checked = false;
+    } else {
+      alertBtn.classList.add('true')
+      input[0].checked = true;
+    }
+  });
 
   // const audio = document.createElement('audio');
   // audio.src = 'Clock-Alarm02-1(Loop).mp3';
   // alertBtn.classList.add('audio');
   // console.log(audio);
 
-  alertBtn.addEventListener('change', () => {
+  alertBtn.addEventListener('click', () => {
     if (alertBtn.classList.contains('audio')) {
       document.querySelector('audio').remove();
       alertBtn.classList.remove('audio');
@@ -255,18 +267,32 @@
       alertBtn.classList.add('audio');
       // audio.play();
     }
-
   })
 
-  toggleBtn.addEventListener('change', () => {
-    if(youtube.classList.contains('appear')){
+
+  toggleBtn.addEventListener('click', () => {
+    if(toggleBtn.classList.contains('true')) {
+      toggleBtn.classList.remove('true');
+      input[1].checked = false;
       youtube.classList.remove('appear');
       youtube.classList.add('hidden');
     } else {
+      toggleBtn.classList.add('true')
+      input[1].checked = true;
       youtube.classList.add('appear');
       youtube.classList.remove('hidden');
     }
   });
+
+  // toggleBtn.addEventListener('change', () => {
+  //   if(youtube.classList.contains('appear')){
+  //     youtube.classList.remove('appear');
+  //     youtube.classList.add('hidden');
+  //   } else {
+  //     youtube.classList.add('appear');
+  //     youtube.classList.remove('hidden');
+  //   }
+  // });
 
   const playbtn = document.querySelector('.bi-play-circle');
   const pausebtn = document.querySelector('.bi-pause-circle');
