@@ -296,6 +296,7 @@ label {
   border-radius: 46px;
   transition: .4s;
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 /* .toggle-frame {
