@@ -286,14 +286,6 @@ label {
   cursor: pointer;
 }
 
-/* .toggle-frame {
-  width: 120px;
-  height: 48px;
-  margin: 0 auto;
-  background: gainsboro;
-  border-radius: 24px;
-} */
-
 input:checked + label {
   background: #4BD865;
 }

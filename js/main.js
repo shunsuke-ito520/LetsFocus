@@ -11,16 +11,15 @@
   const prev1 = document.getElementById('prev1');
   const prev2 = document.getElementById('prev2');
   const prev3 = document.getElementById('prev3');
-  // const nextBtns = document.querySelectorAll('.bi-arrow-down-circle-fill');
   const windowHeight = document.documentElement.clientHeight;
-  const toggleBtn = document.getElementById('toggleBtn');
-  const youtube = document.querySelector('iframe');
 
+  // 各ページの表示領域をユーザーの画面の表示領域に合わせる
   title.style.height = `${windowHeight - 64}px`;
   timer.style.height = `${windowHeight}px`;
   bgm.style.height = `${windowHeight}px`;
   play.style.height = `${windowHeight - 64}px`;
 
+  // ページ遷移ボタンのイベント
   clickHere.addEventListener('click', () => {
     window.scrollTo({
       top: windowHeight,
@@ -42,16 +41,6 @@
     });
   });
   
-  // nextBtns.forEach((next) => {
-  //   next.addEventListener('click', () => {
-  //     window.scrollTo({
-  //           top: windowHeight,
-  //           behavior: 'smooth'
-  //         });
-  //   });
-  //   i++;
-  // });
-
   prev1.addEventListener('click', () => {
     window.scrollTo({
       top: 0,
@@ -251,11 +240,6 @@
     }
   });
 
-  // const audio = document.createElement('audio');
-  // audio.src = 'Clock-Alarm02-1(Loop).mp3';
-  // alertBtn.classList.add('audio');
-  // console.log(audio);
-
   alertBtn.addEventListener('click', () => {
     if (alertBtn.classList.contains('audio')) {
       document.querySelector('audio').remove();
@@ -269,6 +253,9 @@
     }
   })
 
+  // BGMのオンオフ
+  const toggleBtn = document.getElementById('toggleBtn');
+  const youtube = document.querySelector('iframe');
 
   toggleBtn.addEventListener('click', () => {
     if(toggleBtn.classList.contains('true')) {
@@ -284,16 +271,7 @@
     }
   });
 
-  // toggleBtn.addEventListener('change', () => {
-  //   if(youtube.classList.contains('appear')){
-  //     youtube.classList.remove('appear');
-  //     youtube.classList.add('hidden');
-  //   } else {
-  //     youtube.classList.add('appear');
-  //     youtube.classList.remove('hidden');
-  //   }
-  // });
-
+  // プレイ画面
   const playbtn = document.querySelector('.bi-play-circle');
   const pausebtn = document.querySelector('.bi-pause-circle');
 
@@ -405,20 +383,6 @@
       }
     }
 
-    // if(playTime.textContent === '00:00:00') {
-    //   playTime.classList.add('interval');
-    // }
-
-    // playNow();
-
-    // setPlaytime--;
-    // let hour = `${((setPlaytime - setPlaytime % 60) / 60 - ((setPlaytime - setPlaytime % 60) / 60 % 60)) / 60}`.padStart(2, '0');
-
-    // let min = `${(setPlaytime - setPlaytime % 60) / 60 % 60}`.padStart(2, '0');
-
-    // let second = `${setPlaytime % 60}`.padStart(2, '0');
-
-    // playTime.textContent = `${hour}:${min}:${second}`;
   };
 
   let intervalId;
@@ -432,11 +396,8 @@
   playbtn.addEventListener('click', () => {
     playbtn.classList.add('pause');
     pausebtn.classList.remove('pause');
-    // let intervalId = setInterval(focus, 1000);
     timerStart();
   });
-
-  // const intervalId = setInterval(focus, 1000);
 
   const timerStop = () => {
     clearInterval(intervalId);
