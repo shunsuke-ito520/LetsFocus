@@ -1,37 +1,27 @@
 html {
-  /* background-color: aqua; */
   height: 100%;
 }
 
 body {
-  /* ブラックイメージ */
-  /* background-image: url("../img/img-black.png"); */
-
-
-  /* background-image: url("../img/img-green.png"); */
-
-  /* background-image: url("../img/img-blue.jpg"); */
-
   background-size: cover;
   height: 100%;
   margin: 0;
-  /* background-color: aqua; */
 }
 
 .black-color-mode {
-  background-color: rgb(190, 188, 188);
+  background-image: url("../img/img-black.jpg");
 }
 
 .white-color-mode {
-  background-color: whitesmoke;
+  background-image: url("../img/img-white.jpg");
 }
 
 .red-color-mode {
-  background-color: rgb(247, 133, 133);
+  background-image: url("../img/img-red.jpg");
 }
 
 .green-color-mode {
-  background-image: url("../img/img-green.png");
+  background-image: url("../img/img-green.jpg");
 }
 
 .blue-color-mode {
@@ -45,9 +35,7 @@ header, footer {
 
 .container {
   box-sizing: border-box;
-  /* width: calc(100% - (16px * 2)); */
   margin: auto;
-  /* border: 1px solid red; */
   justify-content: space-between;
   -webkit-backdrop-filter: blur(20px); 
   backdrop-filter: blur(20px);
@@ -62,7 +50,6 @@ header, footer {
   margin: auto;
   flex-direction: column;
   justify-content: center;
-  /* border: 1px solid red; */
   text-align: center;
 }
 
