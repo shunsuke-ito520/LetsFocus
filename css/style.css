@@ -40,10 +40,11 @@ header, footer {
   -webkit-backdrop-filter: blur(20px); 
   backdrop-filter: blur(20px);
   background-color: rgba(255, 255, 255, .4);
+  border: solid 1px red;
 }
 
 .main-container {
-  width: 70%;
+  /* width: 100%; */
   box-sizing: border-box;
   padding: 16px;
   display: flex;
@@ -51,6 +52,7 @@ header, footer {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  border: solid 1px red;
 }
 
 .main-container h1 {
@@ -203,23 +205,24 @@ header, footer {
 }
 
 .color-select {
-  position: absolute;
+  /* position: absolute;
   top: 340px;
-  right: 32px;
+  right: 32px; */
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
+  justify-content: center;
   padding: 8px;
 }
 
 .color-select > span {
   display: block;
-  margin-bottom: 12px;
+  margin-right: 12px;
   font-size: 20px;
 }
 
 .circle-black {
-  margin-bottom: 8px;
+  margin-right: 8px;
   width: 36px;
   height: 36px;
   background : black;
@@ -229,7 +232,7 @@ header, footer {
 }
 
 .circle-white {
-  margin-bottom: 8px;
+  margin-right: 8px;
   width: 36px;
   height: 36px;
   background : white;
@@ -240,7 +243,7 @@ header, footer {
 }
 
 .circle-red {
-  margin-bottom: 8px;
+  margin-right: 8px;
   width: 36px;
   height: 36px;
   background : red;
@@ -249,8 +252,8 @@ header, footer {
   cursor: pointer;
 }
 
-.circle-blue {
-  margin-bottom: 8px;
+.circle-green {
+  margin-right: 8px;
   width: 36px;
   height: 36px;
   background : green;
@@ -259,7 +262,7 @@ header, footer {
   cursor: pointer;
 }
 
-.circle-green {
+.circle-blue {
   width: 36px;
   height: 36px;
   background : blue;
@@ -267,6 +270,8 @@ header, footer {
   opacity: .6;
   cursor: pointer;
 }
+
+
 
 [class^= "circle"]:hover {
   width: 40px;
@@ -389,4 +394,87 @@ iframe {
 
 .pause {
   display: none;
+}
+
+@media (max-width: 960px) {
+  /* iframe {
+    width: auto;
+    height: auto;
+  } */
+}
+
+@media (max-width: 520px) {
+  .container h1 {
+    font-size: 36px;
+  }
+
+  .color-select * {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+  }
+
+  .color-select span {
+    margin-right: 8px;
+    width: auto;
+  }
+
+  [class^= "circle"]:hover {
+    width: 30px;
+    height: 30px;
+  }
+
+  .work {
+    flex-direction: column;
+    margin-bottom: 16px;
+  }
+
+  .work > div > div {
+    font-size: 13px;
+  }
+
+  .set-time {
+    font-size: 16px;
+    width: 24px;
+  }
+
+  .set-time > * {
+    height: 18px;
+  }
+
+  .relax-flex-container > div {
+    font-size: 13px;
+  }
+
+  .alert-flex-container div {
+    font-size: 16px;
+  }
+
+  .work-container h2 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  label {
+    width: 65px;
+    height: 36px;
+  }
+
+  label:after {
+    width: 36px;
+    height: 36px;
+  }
+
+  input:checked +label:after {
+    left: 30px;
+}
+
+  .bgm-flex-container div {
+    font-size: 16px;
+  }
+
+  iframe {
+    width: auto;
+    height: auto;
+  }
 }
