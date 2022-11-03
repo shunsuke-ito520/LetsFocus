@@ -67,8 +67,8 @@
   const black = document.querySelector('.circle-black');
   const white = document.querySelector('.circle-white');
   const red = document.querySelector('.circle-red');
-  const green = document.querySelector('.circle-blue');
-  const blue = document.querySelector('.circle-green');
+  const green = document.querySelector('.circle-green');
+  const blue = document.querySelector('.circle-blue');
 
   const colorReset = () => {
     body.classList.remove('black-color-mode');

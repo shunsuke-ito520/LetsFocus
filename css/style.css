@@ -40,7 +40,7 @@ header, footer {
   -webkit-backdrop-filter: blur(20px); 
   backdrop-filter: blur(20px);
   background-color: rgba(255, 255, 255, .4);
-  border: solid 1px red;
+  /* border: solid 1px red; */
 }
 
 .main-container {
@@ -52,7 +52,7 @@ header, footer {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  border: solid 1px red;
+  /* border: solid 1px red; */
 }
 
 .main-container h1 {
@@ -394,6 +394,22 @@ iframe {
 
 .pause {
   display: none;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  opacity: .5;
 }
 
 @media (max-width: 960px) {
