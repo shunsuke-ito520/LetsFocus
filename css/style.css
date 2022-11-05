@@ -424,6 +424,10 @@ a:hover {
     font-size: 36px;
   }
 
+  .container p {
+    font-size: 12px;
+  }
+
   .color-select * {
     width: 24px;
     height: 24px;
@@ -443,6 +447,12 @@ a:hover {
   .work {
     flex-direction: column;
     margin-bottom: 16px;
+  }
+
+  .mobile-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
 
   .work > div > div {
